@@ -1,0 +1,19 @@
+---
+- name: uninstalling apache and installing nginx
+  hosts: myservers
+  tasks:
+    - name: uninstalling apache if uninstalled.
+      package:
+        name: httpd
+        state: absent
+
+    - name: installing the nginx
+      package:
+        name: nginx
+        state: present
+        
+    - name: starting the nginx
+      service:
+        name: nginx
+        state: started
+        enabled: yes

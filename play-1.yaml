@@ -1,0 +1,6 @@
+---
+- name: first basic playbook
+  hosts: myservers
+  tasks:
+  - name: check coneectivity
+    ping: 

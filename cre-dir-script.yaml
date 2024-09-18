@@ -1,0 +1,6 @@
+---
+- name: Run the script on remote servers
+  hosts: myservers
+  tasks:
+    - name: run script
+      script: /root/cre-dir.sh   #your script should be there at the located path.

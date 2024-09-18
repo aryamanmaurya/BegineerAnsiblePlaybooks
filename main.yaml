@@ -1,0 +1,5 @@
+---
+- hosts: myservers
+  become: true
+  roles:
+    - wordpress-site-setup

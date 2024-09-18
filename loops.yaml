@@ -1,0 +1,28 @@
+---
+- name: creating multiple users and installing multiple packages throught loops
+  hosts: myservers
+  tasks:
+    - name: creating users
+      user:
+        name: "{{ item }}"
+        state: present
+      loop:
+        - ram
+        - hari
+        - krishan
+        - gopal
+        - shyama
+        - arjuna
+
+
+    - name: installing packages
+      yum:
+        name: "{{ item }}"
+        state: present
+      loop:
+        - vim
+        - mariadb
+        - unzip
+        - php
+        - php-xml
+        - php-zip

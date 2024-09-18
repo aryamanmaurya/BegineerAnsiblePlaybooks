@@ -1,0 +1,20 @@
+---
+- name: creating files and direcotories
+  hosts: myservers
+  tasks:
+    - name: creating files
+      file:
+        path: /tmp/demo-file.txt
+        state: touch
+        owner: armaan
+        group: armaan
+        mode: u=rwx,g=rw,o=r
+
+
+    - name: creating directory
+      file:
+        path: /tmp/demo-dir
+        state: directory
+        owner: root
+        group: armaan
+        mode: 0755

@@ -1,0 +1,15 @@
+---
+- name: download files form internet
+  hosts: myservers
+  tasks:
+    - name: download wordpress
+      get_url:
+        url: http://wordpress.org/latest.zip
+        dest: /root/
+        mode: 0777
+
+    - name: download images
+      get_url:
+        url: https://www.google.com/url?sa=i&url=https%3A%2F%2Fpixabay.com%2Fimages%2Fsearch%2Fnature%2F&psig=AOvVaw2oKu4FOqmqomt_46qC6uBI&ust=1726333118795000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCOipwJqywIgDFQAAAAAdAAAAABAJ
+        dest: /root/
+        mode: 0777

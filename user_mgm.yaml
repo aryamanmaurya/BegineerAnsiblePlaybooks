@@ -1,0 +1,12 @@
+---
+- name: user management
+  hosts: myservers
+  
+  tasks:
+    - name: creating user
+      user:
+        name: harry
+        comment: test_user by ansible
+        update_password: always
+        password: "$6$tjSrRjDcejCyuKgK$Qfm4vRq/eVpU/J5S563.90SNZAnwkdaiDhOy8SXCZrfuhqwnlfx.tcs9/Ov/T5/gJ8QGpStL0Q896QU75ZhO.1" 
+#Use the 'mkpasswd' command to generate the hashed password e.g. ->  mkpasswd --method=SHA512

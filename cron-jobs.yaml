@@ -1,0 +1,16 @@
+---
+- name: setting up the cron job
+  hosts: myservers
+  tasks:
+    - name: setup cron job
+      cron:
+        name: daily backup of database
+        minute: 30
+        hour: 4
+        day: "*"
+        month: "*"
+        weekday: "*"
+        user: armaan
+        job: echo "hi"
+
+

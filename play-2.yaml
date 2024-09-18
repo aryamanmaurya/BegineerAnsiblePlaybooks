@@ -1,0 +1,15 @@
+---
+- name: installing packages
+  hosts: localhost
+
+  tasks:
+    - name: installing nginx
+      yum:
+        name: nginx
+        state: absent
+
+    - name: starting nginx
+      service:
+        name: nginx
+        state: stopped
+        enabled: no
